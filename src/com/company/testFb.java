@@ -5,6 +5,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.Select;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import java.util.concurrent.TimeUnit;
@@ -19,26 +20,34 @@ public class testFb {
 
         //go to the page
         driver.get("https://www.google.com");
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        String actualTitle = "Google";
+        Assert.assertEquals(driver.getTitle(), actualTitle);
+
+        Thread.sleep(5000);
 
         //click Sign in button
         WebElement signIn = driver.findElement(By.id("gb_70"));
         signIn.click();
-        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
-
+        Thread.sleep(5000);
+        String actualSignIn = "Sign in - Google Accounts";
+        Assert.assertEquals(driver.getTitle(), actualSignIn);
+////
+//
         //click Create an account button
         WebElement createAcc = driver.findElement(By.xpath("//span[@class='NlWrkb snByac']"));
         createAcc.click();
-        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
-
-
+        Thread.sleep(5000);
+//
+////        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+//
+//
         //click Create for myself option
         WebElement myselfOpt = driver.findElement(By.xpath("//div[contains(text(),'For myself')]"));
         myselfOpt.click();
+        Thread.sleep(5000);
 
-        //select birthday from dropdown list
-//        WebElement day = driver.findElement(By.id("day"));
-//        Select select_day = new Select(day);
-//        select_day.selectByValue("5");
+//        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+
+
     }
 }
