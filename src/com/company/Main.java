@@ -12,17 +12,6 @@ import java.util.concurrent.TimeUnit;
 
 public class Main {
 
-//    private String baseURL;
-//    private WebDriver driver;
-//    private WebElement element;
-//
-//    @BeforeMethod
-//    public void setUp() throws  Exception {
-//        System.setProperty("webdriver.chrome.driver", "/Users/khoinguyen/Downloads/chromedriver");
-//        driver = new ChromeDriver();
-//        baseURL = "https://www.spicejet.com/";
-//        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-//    }
     @Test
     public void dropdownTest() throws InterruptedException {
 
@@ -32,32 +21,44 @@ public class Main {
         //go to the page
         driver.get("https://www.spicejet.com");
         driver.manage().window().maximize();
-
-//        driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS);
         Thread.sleep(5000);
+
+        //select checkbox
+        WebElement student = driver.findElement(By.cssSelector("input[id*='StudentDiscount']"));
+        student.click();
+        Thread.sleep(3000);
+
+        WebElement senior = driver.findElement(By.cssSelector("input[id*='SeniorCitizenDiscount']"));
+        senior.click();
+        Thread.sleep(3000);
+
+        WebElement family = driver.findElement(By.cssSelector("input[id*='friendsandfamily"));
+        family.click();
+        Thread.sleep(2000);
 
         //click on Deals
 //        WebElement deal = driver.findElement(By.id("header-vacations"));
 //        deal.click();
 
         //click on to open the main dropdown
-        driver.findElement(By.id("divpaxinfo")).click();
+        WebElement passengers = driver.findElement(By.id("divpaxinfo"));
+        passengers.click();
+//        driver.findElement(By.id("divpaxinfo")).click();
 
 //        //select a number of adult
         WebElement element1 = driver.findElement(By.id("ctl00_mainContent_ddl_Adult"));
         Select s1 = new Select(element1);
         s1.selectByIndex(1);
-        Thread.sleep(5000);
-        System.out.println(element1.getText());
-
+        Thread.sleep(2000);
 
         //select a number of children
         WebElement element2 = driver.findElement(By.id("ctl00_mainContent_ddl_Child"));
         Select s2 = new Select(element2);
-        s2.selectByValue("1");
-        Thread.sleep(2000);
+        s2.selectByIndex(1);
+        Thread.sleep(3000);
 
-        Thread.sleep(2000);
+        //print out text of main checkbox
+        System.out.println(passengers.getText());
 
 //      //click on 1 more dropdown
         WebElement element3 = driver.findElement(By.id("ctl00_mainContent_DropDownListCurrency"));
