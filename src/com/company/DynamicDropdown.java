@@ -29,6 +29,15 @@ public class DynamicDropdown {
         driver.manage().window().maximize();
         Thread.sleep(3000);
 
+        //select checkbox
+        WebElement student = driver.findElement(By.cssSelector("input[id*='StudentDiscount']"));
+        student.click();
+        Thread.sleep(3000);
+
+        WebElement senior = driver.findElement(By.cssSelector("input[id*='SeniorCitizenDiscount']"));
+        senior.click();
+        Thread.sleep(3000);
+
         //click on departure city
         WebElement fromCity = driver.findElement(By.id("ctl00_mainContent_ddl_originStation1_CTXT"));
         fromCity.click();
@@ -40,6 +49,7 @@ public class DynamicDropdown {
         //select Chennai as an arrival
         //xpath (//a[@value='MAA'])[2]
         driver.findElement(By.xpath("(//a[@value='MAA'])[2]")).click();
+
 
     }
 }
