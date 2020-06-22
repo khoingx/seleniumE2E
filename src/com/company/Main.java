@@ -50,8 +50,6 @@ public class Main {
         Thread.sleep(5000);
         System.out.println(element1.getText());
 
-//        driver.findElement(By.id("divpaxinfo")).click();
-//        driver.findElement(By.id("divpaxinfo")).click();
 
         //select a number of children
         WebElement element2 = driver.findElement(By.id("ctl00_mainContent_ddl_Child"));
@@ -60,6 +58,7 @@ public class Main {
         Thread.sleep(2000);
 
         Thread.sleep(2000);
+
 //      //click on 1 more dropdown
         WebElement element3 = driver.findElement(By.id("ctl00_mainContent_DropDownListCurrency"));
         element3.click();

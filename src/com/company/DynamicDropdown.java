@@ -33,7 +33,7 @@ public class DynamicDropdown {
         WebElement fromCity = driver.findElement(By.id("ctl00_mainContent_ddl_originStation1_CTXT"));
         fromCity.click();
 
-        //select Hyderbad as a departure
+        //select Hyderabad as a departure
         driver.findElement(By.xpath("//a[@text='Hyderabad (HYD)']")).click();
         Thread.sleep(2000);
 
