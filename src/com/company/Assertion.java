@@ -11,7 +11,7 @@ import org.testng.annotations.Test;
 
 import java.util.concurrent.TimeUnit;
 
-public class Main {
+public class Assertion {
 
     @Test
     public void dropdownTest() throws InterruptedException {
